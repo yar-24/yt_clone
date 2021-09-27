@@ -1,15 +1,6 @@
-.sliderArrow {
-    height: 100%;
-    color: white;
-    position: absolute;
-    z-index: 99;
-    top:0;
-    bottom: 0;
-    margin: auto;
-    margin-left: 5px;
-    cursor: pointer;
-}
+
 
 .items{
     padding-left: 4%;
 }
+

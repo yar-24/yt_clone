@@ -26,9 +26,8 @@ const Wrapper = styled.div`
   background-color: #191b1c;
   color: white;
   height: 100%;
-  overflow-y: hidden;
   width: 18%;
-  ${tablet({ width: "10%" })};
+  ${tablet({ width: "6%" })};
 `;
 
 const MenuItem = styled.div`
@@ -40,9 +39,28 @@ const MenuItem = styled.div`
   :hover {
     background-color: #242728;
   }
+  ${tablet({
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "5px",
+    marginTop: "25px",
+    backgroundColor: "transparent"
+  })};
+`;
+
+const MenuItemTambahan = styled.div`
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin: 7px;
+  padding: 4px;
+  :hover {
+    background-color: #242728;
+  }
   &:focus {
     background-color: grey;
   }
+  ${tablet({ display: "none" })};
 `;
 
 const Hr = styled.div`
@@ -50,17 +68,19 @@ const Hr = styled.div`
   border: none;
   height: 2px;
   margin: 9px 10px;
+  ${tablet({ display: "none" })};
 `;
 
 const Title = styled.p`
+  display: flex;
   font-size: 15px;
   position: absolute;
   padding-left: 25%;
   ${tablet({
-    fonttSize: "10px",
     textAlign: "center",
-    paddingBottom: "20px",
-    flexDirection: "space-between",
+    padding: "5px",
+    marginTop: "45px",
+    fontSize: "10px"
   })};
 `;
 
@@ -69,6 +89,16 @@ const ImgSubs = styled.img`
   height: 25px;
   border-radius: 50%;
   padding-left: 4%;
+`;
+
+const Text = styled.h1`
+  font-size: 14px;
+  margin: 5px;
+  padding-left: 15px;
+  color: #8f8a83;
+  ${tablet({
+    display: "none",
+  })};
 `;
 
 const Navmenu = () => {
@@ -93,49 +123,40 @@ const Navmenu = () => {
           <VideoLibraryOutlined className="items" />
           <Title>koleksi</Title>
         </MenuItem>
-        <MenuItem>
+        <MenuItemTambahan>
           <HistorySharp className="items" />
           <Title>Histori</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <OndemandVideoOutlined className="items" />
           <Title>Video Anda</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <AccessTimeOutlined className="items" />
           <Title>Tonton nanti</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <ThumbUpAltOutlined className="items" />
           <Title>Video yang disukai</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <PlaylistPlayOutlined className="items" />
           <Title>Music</Title>
-        </MenuItem>
+        </MenuItemTambahan>
         <Hr />
-        <h1
-          style={{
-            fontSize: 14,
-            paddingLeft: "9%",
-            margin: 5,
-            color: "#8F8A83",
-          }}
-        >
-          SUBSCRIPTION
-        </h1>
-        <MenuItem>
+        <Text>SUBSCRIPTION</Text>
+        <MenuItemTambahan>
           <ImgSubs src="https://images.pexels.com/photos/5012108/pexels-photo-5012108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
           <Title>Siskaeee</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <ImgSubs src="https://images.pexels.com/photos/6205486/pexels-photo-6205486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
           <Title>Edi Santososro</Title>
-        </MenuItem>
-        <MenuItem>
+        </MenuItemTambahan>
+        <MenuItemTambahan>
           <ImgSubs src="https://images.pexels.com/photos/5538001/pexels-photo-5538001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
           <Title>koleksi</Title>
-        </MenuItem>
+        </MenuItemTambahan>
       </Wrapper>
     </Container>
   );

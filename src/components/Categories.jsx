@@ -1,17 +1,36 @@
 import styled from "styled-components";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+import { tablet } from "../responsive";
 import components from "../components/components.css";
 
 const Container = styled.div`
   height: 50px;
   width: 100%;
+  position: fixed;
   left: 18%;
   background-color: #191a1b;
   color: white;
-  position: fixed;
+  ${tablet({ display: "flex", left: "6%", marginTop: "10px" })}
 `;
 
 const Wrapper = styled.div``;
+
+const Item = styled.div`
+  display: flex;
+  align-items: flex-end;
+  width: 80px;
+  height: 100%;
+  color: white;
+  border-radius: 40%;
+  background: linear-gradient(100deg, #191b1c 0%, rgb(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 76%;
+  cursor: pointer;
+  ${tablet({ left: "85%", width: "10%" })}
+`;
 
 const ContainerCategory = styled.div`
   display: flex;
@@ -28,15 +47,10 @@ const Category = styled.div`
   cursor: pointer;
 `;
 
-
 const Categories = () => {
   return (
     <Container>
       <Wrapper>
-        <ArrowBackIos
-          className="sliderArrow"
-          style={{ left: 0, width: 15 }}
-        />
         <ContainerCategory>
           <Category>Semua</Category>
           <Category>Viral</Category>
@@ -52,10 +66,9 @@ const Categories = () => {
           <Category>music</Category>
           <Category>music</Category>
         </ContainerCategory>
-        <ArrowForwardIos
-          className="sliderArrow"
-          style={{ right: "18%", width: 15 }}
-        />
+        <Item>
+          <ArrowForwardIos style={{width:"15px"}}/>
+        </Item>
       </Wrapper>
     </Container>
   );

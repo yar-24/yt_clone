@@ -1,5 +1,6 @@
 import { AccessTimeOutlined, PlaylistPlayOutlined, TitleTwoTone } from "@material-ui/icons";
 import styled from "styled-components";
+import { tablet } from "../responsive";
 import { videoItems } from "../data";
 
 const Container = styled.div`
@@ -26,6 +27,7 @@ const Wrapper = styled.div`
   position: initial;
   background-color: transparent;
   flex-direction: row;
+  ${tablet({paddingLeft: "15%"})}
 `;
 
 const Info = styled.div`
@@ -48,6 +50,7 @@ const Image = styled.img`
   object-fit: cover;
   align-items: center;
   justify-content: center;
+  ${tablet({ })}
 `;
 
 const ContainerImgSubs = styled.div`
@@ -86,16 +89,6 @@ const Watch = styled.p`
 `;
 const Date = styled.p`
   color: #858686;
-`;
-const Items = styled.div`
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2px;
-  margin: 2px;
-  left: 36%;
-  display: flex;
-  flex: -1;
-  flex-direction: column;
 `;
 
 const Product = ({ item }) => {
